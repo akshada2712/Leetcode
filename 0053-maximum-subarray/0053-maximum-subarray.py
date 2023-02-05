@@ -5,7 +5,9 @@ class Solution:
         
         for num in nums:
             currSum += num
-            ans = max(ans, currSum)
+            if currSum > ans:
+                ans = currSum
+            #ans = max(ans, currSum)
             
 			# if currSum < 0 then why to accumulate it further just ignore it and make it 0
             if currSum < 0:
