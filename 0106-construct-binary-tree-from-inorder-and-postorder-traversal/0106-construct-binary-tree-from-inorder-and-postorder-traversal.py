@@ -9,12 +9,29 @@ class Solution:
                
         ## O(n^2) solution
         
-        if not inorder:
-            return None
+#         if not inorder:
+#             return None
         
-        root = TreeNode(postorder.pop())
-        idx = inorder.index(root.val)
-        root.right = self.buildTree(inorder[idx+1:], postorder)
-        root.left = self.buildTree(inorder[:idx], postorder)
+#         root = TreeNode(postorder.pop())
+#         idx = inorder.index(root.val)
+#         root.right = self.buildTree(inorder[idx+1:], postorder)
+#         root.left = self.buildTree(inorder[:idx], postorder)
         
-        return root
+#         return root
+    
+    
+        ## O(n) solution
+        inorderIdx = {v:i for i,v in enumerate(inorder)}
+        
+        def helper(l,r):        
+            if l > r: 
+                return None
+        
+            root = TreeNode(postorder.pop())
+            idx = inorderIdx[root.val]
+            root.right = helper(idx+1, r)
+            root.left = helper(l, idx-1)
+
+            return root
+        
+        return helper(0, len(inorder)-1)
