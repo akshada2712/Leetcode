@@ -6,8 +6,6 @@ class Solution:
         
         for a,b in prerequisites:
             graph[b].append(a)
-            
-        print(graph)
         
         def dfs(src):
             if src in visited:
