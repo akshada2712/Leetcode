@@ -1,8 +1,8 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        open_brack = ['(','{','[']
-        close_brack = [')','}',']']
-        match_pairs = {'}':'{',']':'[',')':'('}
+        open_brack = ['{','(','[']
+        close_brack = ['}',')',']']
+        pairs = {'}':'{', ']':'[',')':'('}
         
         stack = []
         
@@ -10,15 +10,14 @@ class Solution:
             if i in open_brack:
                 stack.append(i)
             elif i in close_brack:
-                if len(stack) == 0: return False
-                else:
-                    if stack[-1] == match_pairs[i]:
+                if len(stack) == 0: return False 
+                else: 
+                    if stack[-1] == pairs[i]:
                         stack.pop()
-                        
-                    else: return False
+                    else:
+                        return False
                     
         if len(stack) == 0:
             return True
-        else: 
+        else:
             return False
-                    
