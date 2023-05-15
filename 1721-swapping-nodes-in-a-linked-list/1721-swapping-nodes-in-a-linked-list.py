@@ -12,7 +12,7 @@ class Solution:
             head = head.next
             
         arr[k-1],arr[-k]=arr[-k],arr[k-1]
-        print(arr)
+        
         dummy = curr = ListNode(0)
         for i in arr:
             curr.next = ListNode(i)
