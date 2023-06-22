@@ -2,7 +2,7 @@ class Solution:
     def reorganizeString(self, s: str) -> str:
         if not s:
             return ""
-        res = []
+        res = ''
         hashmap = Counter(s)
         
         maxHeap = []
@@ -14,8 +14,8 @@ class Solution:
             f1, c1 = heapq.heappop(maxHeap)
             f2, c2 = heapq.heappop(maxHeap)
             
-            res.append(c1)
-            res.append(c2)
+            res += c1
+            res += c2
             
             if abs(f1) > 1:
                 heapq.heappush(maxHeap,[1+f1,c1])
@@ -29,7 +29,7 @@ class Solution:
             if abs(f) > 1:
                 return ''
             else:
-                res.append(c)
-        return ''.join(res)
+                res += c
+        return res
             
             
