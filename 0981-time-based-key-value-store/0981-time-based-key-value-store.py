@@ -13,7 +13,8 @@ class TimeMap:
         
 
     def get(self, key: str, timestamp: int) -> str:
-        res, values ="", self.map.get(key,[])
+        res, values ="", self.map.get(key,[])   # if key is not present it will return empty list
+        
         l = 0
         r = len(values)-1
         
