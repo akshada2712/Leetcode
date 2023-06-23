@@ -3,6 +3,8 @@ class Solution:
         res = []
         last = {}
         
+        # create a hashmap which stores the last occurence of the character in string
+        
         for i in range(len(s)):
             last[s[i]] = i
             
@@ -11,6 +13,9 @@ class Solution:
         end = 0
         size = 0
         
+        # defined two variables end and size
+        # update end while iterating with its max(end, last(char))
+        # if at any point end becomes equal to the idx it means a partition
         
         for i in range(len(s)):
             end = max(end, last[s[i]])
