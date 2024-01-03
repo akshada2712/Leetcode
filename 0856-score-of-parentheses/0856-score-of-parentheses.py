@@ -7,6 +7,7 @@ class Solution:
                 stack.append(0)
             elif i == ')':
                 score = stack.pop()
+                #print(stack)
                 stack[-1] += max(2*score, 1)
                     
         return stack[-1]
