@@ -41,4 +41,35 @@ class Solution:
         return sum(stack)
     
     
-  
+    
+    
+#         stack = []
+#         curr = 0
+#         prevOp = "+"
+#         s += "@"
+        
+#         for i in s:
+#             print(stack,i,prevOp)
+#             if i.isdigit():
+#                 curr = curr * 10 + int(i)
+#             elif i == '(':
+#                 stack.append(prevOp)
+#                 prevOp = "+"
+#             else:
+#                 if prevOp == "+":
+#                     stack.append(curr)
+#                 elif prevOp == '-':
+#                     stack.append(-curr)
+#                 elif prevOp == '*':
+#                     stack.append(stack.pop() * curr)
+#                 elif prevOp == '/':
+#                     stack.append(math.trunc(stack.pop() / curr))
+#                 curr = 0
+#                 prevOp = i 
+#                 if i == ')':
+#                     while type(stack[-1]) == int():
+#                         curr += stack.pop()
+#                     prevOp = stack.pop()
+#         print(stack)           
+#         return sum(stack)
+        
