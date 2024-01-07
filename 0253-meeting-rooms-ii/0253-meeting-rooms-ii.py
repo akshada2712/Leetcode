@@ -8,9 +8,10 @@ class Solution:
         heapq.heappush(minHeap, intervals[0][1])
         
         for i in intervals[1:]:
+            print(minHeap)
             if minHeap[0] <= i[0]:
                 heapq.heappop(minHeap)
-                
+            
             heapq.heappush(minHeap, i[1])
             
         return len(minHeap)
