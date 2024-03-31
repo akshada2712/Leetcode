@@ -1,10 +1,11 @@
 class Solution:
     def checkIfPangram(self, sentence: str) -> bool:
-        chkSet = set()
+#         chkSet = set()
         
-        for i in sentence:
-            if i not in chkSet:
-                chkSet.add(i)
+#         for i in sentence:
+#             if i not in chkSet:
+#                 chkSet.add(i)
+        chkSet = set(sentence)
             
-        return True if len(chkSet) >= 26 else False
+        return len(chkSet) == 26
         
