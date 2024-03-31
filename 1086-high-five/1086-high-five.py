@@ -1,11 +1,14 @@
 import heapq
 class Solution:
     def highFive(self, items: List[List[int]]) -> List[List[int]]:
-        results =  defaultdict(list)
+        results =  {}
+        
         # Using maxHeap 
         
         for id, scores in items:
-           
+            if id not in results:
+                results[id] = []
+                
                 
             heapq.heappush(results[id], scores)
            
