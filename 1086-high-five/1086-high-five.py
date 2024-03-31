@@ -8,7 +8,7 @@ class Solution:
         for id, scores in items:
             if id not in results:
                 results[id] = []
-                heapq.heapify(results[id])
+                
                 
             heapq.heappush(results[id], scores)
            
