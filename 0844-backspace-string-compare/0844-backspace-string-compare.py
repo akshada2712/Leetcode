@@ -16,7 +16,7 @@ class Solution:
                     stackt.pop(-1)
             else:
                 stackt.append(i)
-        print(stackt, stackS)       
+        #print(stackt, stackS)       
         return stackS == stackt
                 
                 
