@@ -4,16 +4,16 @@ class Solution:
         stack = []
         for i in s:
             if i == ')':
-                rev_str = []
+                rev_str = []   # create a array to capture reverse strings
                 
                 while stack and stack[-1] != "(":
-                    rev_str.append(stack.pop())
+                    rev_str.append(stack.pop())   # till we encounter open brack we would be adding the element by popping frm stack
                     
-                stack.pop()
-                
-                stack.extend(rev_str)
+                stack.pop()   # popping the open brack
+                 
+                stack.extend(rev_str)   # adding the reversed element to the last of list
             else:
-                stack.append(i)
+                stack.append(i)    # if its just char
                 
         #print(stack)
         return "".join(stack)
