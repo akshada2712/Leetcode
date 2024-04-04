@@ -5,6 +5,7 @@ class Solution:
         
         for num in nums:
             tot += num 
+            print(tot)
             min_val = min(min_val, tot)
             
         return -min_val + 1
