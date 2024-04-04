@@ -1,6 +1,27 @@
 class Solution:
     def deleteAndEarn(self, nums: List[int]) -> int:
         
+        # top down approach -> gives TLE
+        
+#         points = defaultdict(int)
+#         max_num = 0
+        
+#         for num in nums:
+#             points[num] += num
+#             max_num = max(max_num, num)
+            
+#         def return_max(num):
+#             if num == 0:
+#                 return 0
+#             if num == 1:
+#                 return points[1]
+            
+#             return max(return_max(num - 1), return_max(num - 2) + points[num])
+        
+#         return return_max(max_num)
+        
+        
+        #bottom up approach
         points = defaultdict(int)
         max_num = 0
         
