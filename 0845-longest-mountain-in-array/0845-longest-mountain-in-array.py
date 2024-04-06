@@ -16,8 +16,10 @@ class Solution:
             # once we exit from above loop we have acheieved a point where its peak
             peak = i 
             
+            # above loop didnt execute
             if i == base:
                 i += 1
+                
                 continue 
             # now we have to check for lesser points or where the value increases again
             while i + 1 < n and arr[i] > arr[i+1]:
