@@ -13,7 +13,7 @@ class Solution:
             
         res = stack[:-k] if k else stack
         
-    
+        
                  
         return "".join(res).lstrip('0') or "0"
         
