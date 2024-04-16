@@ -9,10 +9,20 @@ class Solution:
         q = deque()
         q.append((root, 1))
         
-        if depth == 1:
+        if depth == 1:                      # base case 
             newRoot = TreeNode(val)
             newRoot.left = root 
             return newRoot
+        
+        # using bfs approach 
+        # we would be ttracking the levels
+        # at depth - 1 == level: we have found our curr node 
+        # create nodes, store curr into temp variable 
+        # assign curr.left and curr.right with the new nodes 
+        # later assign respective left and right subtress to new nodes formed
+        # at any point if level >= height wr can break out the loop
+        # add node if the level condiiton isn ot satisfies
+        
         
         while q:
             curr, level = q.popleft()
