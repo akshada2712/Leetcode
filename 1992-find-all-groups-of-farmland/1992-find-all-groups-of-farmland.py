@@ -1,5 +1,15 @@
 class Solution:
     def findFarmland(self, land: List[List[int]]) -> List[List[int]]:
+        
+        # approach:
+        
+        # visit -> initalize to 0 same as land if that row, col is visited mark 1 to avoid revisting
+        # row2, col2 -> indicate the right bottom corners they would always be maximum hence we create new rows, cols idx we would be replacing them with maximum values
+        # marking nodes as 1 in visit 
+        # run dfs in 4 direction
+        # once dfs ends you would be having ro2, col2 
+        # while running 1st for loop we would be initializing our r1, c1 i.e top left corners
+        # append in our answers
         def dfs(row, col):
             nonlocal row2, col2
             visit[row][col] = 1
