@@ -17,10 +17,13 @@ class Solution:
                 
             trav.append(root.val)
             
+            
             if root.right:
                 dfs(root.right)
-                
+            #print(len(trav))
+            
         dfs(root)
+        
         
         return trav[k-1]
         
