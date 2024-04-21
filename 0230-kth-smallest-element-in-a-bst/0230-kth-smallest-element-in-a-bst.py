@@ -9,8 +9,13 @@ class Solution:
         trav = []
         
         def dfs(root):
+            
+            if len(trav) == k:
+                return trav[-1]
+            
             if not root:
                 return 
+        
             
             if root.left:
                 dfs(root.left)
