@@ -14,7 +14,7 @@ class Solution:
                 
                 digit = str((int(lock[i]) - 1 + 10) % 10)
                 res.append(lock[:i] + digit + lock[i+1:])
-                
+            #print(res)
             return res
         
         
