@@ -1,19 +1,38 @@
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
-        c1 = Counter(s1)
-        c2 = Counter()
-        k = len(s1)
+        if len(s1) > len(s2):
+            return False
         
-        for i,val in enumerate(s2):
-            c2[val] += 1
-            
-            if i >= k:
+        l = 0 
+        r = 0 
+        n = len(s1)
+        counter = {}
+        hashmap = Counter(s1)
+        
+        while r < len(s2):
+            #print(l,r, counter, hashmap)
+            while r - l + 1 <= n:
+                #print(s2[r])
+                if s2[r] not in counter:
+                    #print(s2[r], counter)
+                    counter[s2[r]] = 1
+                else:
+                    counter[s2[r]] += 1
+                r += 1
                 
-                c2[s2[i-k]] -= 1
-                
-            if c1 == c2:
+            if counter == hashmap:
                 return True
-            
+            else:
+                counter[s2[l]] -= 1
+                if counter[s2[l]] == 0:
+                    del counter[s2[l]]
+                    
+                l += 1
+                
         return False
                 
+                
+                
             
+            
+        
