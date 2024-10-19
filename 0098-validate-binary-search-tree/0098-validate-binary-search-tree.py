@@ -7,24 +7,13 @@
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         
-        def valid(node, low, high):
-            if not node:
+        def validate(root, low = -math.inf, high = math.inf):
+            if not root:
                 return True 
             
-            if not (node.val > low and node.val < high):
-                return False
+            if root.val <= low or root.val >= high:
+                return False 
             
-            return valid(node.left, low, node.val) and valid(node.right, node.val, high)
+            return validate(root.left, low, root.val) and validate(root.right, root.val, high)
         
-        
-        return valid(root, -math.inf, math.inf)
-            
-        
-#         def dfs(node):
-#             if not node.left and not node.right:
-#                 return 
-            
-#             if node.left.val < node.val and node.val < node.right.val:
-#                 return dfs(node.left) and dfs(node.right)
-            
-#         return dfs(root)
+        return validate(root)
