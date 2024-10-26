@@ -1,29 +1,28 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
+        if not height: 
+            return 0 
         
-        # O(1) memory solution 
+        left, right = 0, len(height) - 1
+        lMax, rMax = 0, 0
         
-        if not height:
-            return 0
-       
+        trapped_water = 0
         
-        l = 0 
-        r = len(height) - 1
-        
-        maxLeft = height[l] 
-        maxRight = height[r]
-        
-        units = 0
-        
-        while l < r:
-            if maxLeft < maxRight:
-                l += 1
-                maxLeft = max(maxLeft, height[l])
-                units += maxLeft - height[l]
+        while left < right:
+            if height[left] <= height[right]:
+                if height[left] >= lMax:
+                    lMax = height[left]
+                else:
+                    trapped_water += lMax - height[left]
+                    
+                left += 1
+                
             else:
-                r -= 1
-                maxRight = max(maxRight, height[r])
-                units += maxRight - height[r]
+                if height[right] >= rMax:
+                    rMax = height[right]
+                else:
+                    trapped_water += rMax - height[right]
+                    
+                right -= 1 
                 
-                
-        return units
+        return trapped_water
