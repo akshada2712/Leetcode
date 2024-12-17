@@ -6,20 +6,29 @@
 #         self.right = right
 class Solution:
     def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
-        currSum = 0
+        values = []
+        
         
         def dfs(node):
-            nonlocal currSum
             if not node:
-                return 0
+                return 
             
-            if node.val >= low and node.val <= high:
-                currSum += node.val
-                
             dfs(node.left)
+            values.append(node.val)
             dfs(node.right)
-            
-            return currSum
-            
-        return dfs(root)
         
+        dfs(root)
+        
+        ans = 0
+        for i in range(len(values)):
+            if values[i] == low:
+                while values[i] != high: 
+                    ans += values[i]
+                    i += 1
+                    
+                ans += high 
+                
+                break 
+                
+        return ans
+            
