@@ -1,17 +1,24 @@
 class Solution:
     def validPalindrome(self, s: str) -> bool:
+        def check_palindrome(i,j):
+            while i < j:
+                if s[i] != s[j]:
+                    return False
 
-        l,r = 0, len(s)-1
-        
-        while l < r:
+                i += 1
+                j -= 1
             
-            if s[l] != s[r]:
-                skipL, skipR = s[l+1:r+1], s[l:r]
-                
-                return (skipL == skipL[::-1]) or (skipR == skipR[::-1])
-            l += 1
-            r -= 1
+            return True
+        
+        i = 0 
+        j = len(s) - 1
+        
+        
+        while i < j:
+            if s[i] != s[j]:
+                return check_palindrome(i, j - 1) or check_palindrome(i+1, j)
+            
+            i += 1
+            j -= 1
             
         return True
-            
-        
