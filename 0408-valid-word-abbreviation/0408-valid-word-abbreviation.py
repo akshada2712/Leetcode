@@ -1,6 +1,8 @@
 class Solution:
     def validWordAbbreviation(self, word: str, abbr: str) -> bool:
         
+        
+        # using two pointers
         word_ptr = abbr_ptr = 0 
         
         
