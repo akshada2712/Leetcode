@@ -25,10 +25,8 @@ class Solution:
                 word_ptr += 1
                 abbr_ptr += 1
                 
-        if word_ptr == len(word) and abbr_ptr == len(abbr):
-            return True
-        else:
-            return False
+        return word_ptr == len(word) and abbr_ptr == len(abbr)
+           
 #         i = 0 
         
 #         while i < len(abbr):
